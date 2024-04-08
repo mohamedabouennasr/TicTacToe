@@ -19,16 +19,20 @@ int main() {
             else for (int j = 0; j < 3; j++) *(*(table + i) + j) = ' ';
         }
         // TicTacToe Game
-        displayTable(table);
-        while (winner(table) != 0 && winner(table) != 1 && winner(table) != 2) {
+        printf("C TicTacToe Game!\n");
+        while (winner(table) != 0) {
             inputPlayerAction(1, table);
             system("cls");
             displayTable(table);
+            if (winner(table) == 1) break;
             inputPlayerAction(2, table);
             system("cls");
             displayTable(table);
+            if (winner(table) == 1) break;
         }
-        printf("Winner = %d\n", winner(table));
+        if (winner(table) == 1) printf("Player 1 Wins!\n");
+        else if (winner(table) == 2) printf("Player 2 Wins!\n");
+        else printf("Tie!\n");
         // Free Table Matrix
         for (int i = 0; i < 3; i++) {
             free(*(table + i));
@@ -43,6 +47,9 @@ int main() {
         printf("Reset: ");
         scanf("%d", &reset);
     } while (reset != 0 && reset != 1);
-    if (reset == 1) main();
+    if (reset == 1) {
+        system("cls");
+        main();
+    }
     return 0;
 }

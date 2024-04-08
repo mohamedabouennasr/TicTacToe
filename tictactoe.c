@@ -37,8 +37,17 @@ int winner(char** table) {
     else if (*(*(table + 0) + 2) == 'X' && *(*(table + 1) + 1) == 'X' && *(*(table + 2) + 0) == 'X') return 1;
     else if (*(*(table + 0) + 2) == 'O' && *(*(table + 1) + 1) == 'O' && *(*(table + 2) + 0) == 'O') return 2;
     // Line Check
-
+    else if (*(*(table + 0) + 0) == 'X' && *(*(table + 0) + 1) == 'X' && *(*(table + 0) + 2) == 'X') return 1;
+    else if (*(*(table + 0) + 0) == 'O' && *(*(table + 0) + 1) == 'O' && *(*(table + 0) + 2) == 'O') return 2;
+    else if (*(*(table + 1) + 0) == 'X' && *(*(table + 1) + 1) == 'X' && *(*(table + 1) + 2) == 'X') return 1;
+    else if (*(*(table + 1) + 0) == 'O' && *(*(table + 1) + 1) == 'O' && *(*(table + 1) + 2) == 'O') return 2;
+    else if (*(*(table + 2) + 0) == 'X' && *(*(table + 2) + 1) == 'X' && *(*(table + 2) + 2) == 'X') return 1;
+    else if (*(*(table + 2) + 0) == 'O' && *(*(table + 2) + 1) == 'O' && *(*(table + 2) + 2) == 'O') return 2;
     // Column Check
-
-
+    else if (*(*(table + 0) + 0) == 'X' && *(*(table + 1) + 0) == 'X' && *(*(table + 2) + 0) == 'X') return 1;
+    else if (*(*(table + 0) + 0) == 'O' && *(*(table + 1) + 0) == 'O' && *(*(table + 2) + 0) == 'O') return 2;
+    else if (*(*(table + 0) + 1) == 'X' && *(*(table + 1) + 1) == 'X' && *(*(table + 2) + 1) == 'X') return 1;
+    else if (*(*(table + 0) + 1) == 'O' && *(*(table + 1) + 1) == 'O' && *(*(table + 2) + 1) == 'O') return 2;
+    else if (*(*(table + 0) + 2) == 'X' && *(*(table + 1) + 2) == 'X' && *(*(table + 2) + 2) == 'X') return 1;
+    else if (*(*(table + 0) + 2) == 'O' && *(*(table + 1) + 2) == 'O' && *(*(table + 2) + 2) == 'O') return 2;
 }
